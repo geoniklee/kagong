@@ -14,8 +14,9 @@ public class CafeRepository {
     @PersistenceContext
     EntityManager em;
 
-    public void save(Cafe cafe) {
+    public Long save(Cafe cafe) {
         em.persist(cafe);
+        return cafe.getCafeId();
     }
 
     public Cafe findOne(Long id){

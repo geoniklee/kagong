@@ -14,8 +14,9 @@ public class ReviewRepository {
     @PersistenceContext
     EntityManager em;
 
-    public void save(Review review) {
+    public Long save(Review review) {
         em.persist(review);
+        return review.getReviewId();
     }
 
     public Review findOne(Long id){
