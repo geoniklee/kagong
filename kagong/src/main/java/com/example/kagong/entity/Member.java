@@ -20,7 +20,7 @@ import java.util.List;
 public class Member {
     @Id
     @GeneratedValue
-    private long memberid;
+    private Long memberid;
 
     private String name;
 

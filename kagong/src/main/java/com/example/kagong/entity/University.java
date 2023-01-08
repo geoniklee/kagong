@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter @Setter
 public class University {
     @Id @GeneratedValue
-    private long univId;
+    private Long univId;
 
     private String univName;
 
