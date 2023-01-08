@@ -12,7 +12,7 @@ public class CafeReservation {
     @Id
     @GeneratedValue
     @Column(name = "cafe_reservation_id")
-    private long Id;
+    private Long Id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cafe_id")

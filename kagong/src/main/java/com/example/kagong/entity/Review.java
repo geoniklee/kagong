@@ -12,7 +12,7 @@ import java.util.Date;
 @Getter @Setter
 public class Review {
     @Id @GeneratedValue
-    private long reviewId;
+    private Long reviewId;
 
     private String title;
     private String body;

@@ -13,7 +13,7 @@ import java.util.List;
 public class Reservation {
 
     @Id @GeneratedValue
-    private long reservationId;
+    private Long reservationId;
 
     private LocalDateTime reservationDate;
 
