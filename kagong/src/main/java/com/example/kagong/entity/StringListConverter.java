@@ -5,19 +5,20 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.persistence.AttributeConverter;
-import javax.persistence.Convert;
+import javax.persistence.Converter;
 import java.io.IOException;
 import java.util.List;
 
+@Converter
 public class StringListConverter implements AttributeConverter<List<String>, String> {
-    private static final ObjectMapper mapper = new ObjectMapper()
+    private final ObjectMapper mapper = new ObjectMapper()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             .configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES, false);
 
     // DB 테이블에 들어갈 때 적용됨
     @Override
     public String convertToDatabaseColumn(List<String> attribute) {
-        try{
+        try {
             // Object to JSON in String
             return mapper.writeValueAsString(attribute);
         } catch (JsonProcessingException e) {
@@ -36,9 +37,4 @@ public class StringListConverter implements AttributeConverter<List<String>, Str
             throw new IllegalArgumentException();
         }
     }
-    @Convert(converter = StringListConverter.class)
-    private List<String> ingredientsList;
-
-    @Convert(converter = StringListConverter.class)
-    private List<String> tagList;
 }
