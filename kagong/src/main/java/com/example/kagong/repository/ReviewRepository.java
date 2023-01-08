@@ -1,7 +1,5 @@
 package com.example.kagong.repository;
 
-import com.example.kagong.entity.Cafe;
-import com.example.kagong.entity.Member;
 import com.example.kagong.entity.Review;
 import org.springframework.stereotype.Repository;
 
