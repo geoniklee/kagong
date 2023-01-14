@@ -1,18 +1,18 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/home"
 import Signup from "./pages/signup"
 import Login from "./pages/login"
 import Start from "./pages/start"
-import {useState, useEffect} from "react";
+import Cafelist from "./pages/cafelist"
+import MyPage from "./pages/mypage"
 import styled from "styled-components"
-import axios from 'axios'
 
 function App(){
+  const [ testStr, setTestStr ] = useState('');
 
-  const [testStr, setTestStr] = useState('');
-
-  function callback(str){
+  function callback(str) {
     setTestStr(str);
   }
 
@@ -27,24 +27,32 @@ function App(){
       }, []
   );
 
-  return(
-      <div className= "App">
-        <header className = "App-header">
+  return (
+      <div className="App">
+        <header className="App-header">
+
           {testStr}
         </header>
       </div>
-      // <Frame>
-      // <BrowserRouter>
-      //   <Routes>
-      //     <Route path="/*" element={<Home/>}/>
-      //     <Route path="/signup" element={<Signup/>}/>
-      //     <Route path="/login" element={<Login/>}/>
-      //     <Route path="/start" element={<Start/>}/>
-      //   </Routes>
-      // </BrowserRouter>
-      // </Frame>
-  )
+  );
 }
+
+// const App = () => {
+//   return(
+//     <Frame>
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/*" element={<Home/>}/>
+//         <Route path="/signup" element={<Signup/>}/>
+//         <Route path="/login" element={<Login/>}/>
+//         <Route path="/start" element={<Start/>}/>
+//         <Route path="/cafelist" element={<Cafelist/>}/>
+//         <Route path="/mypage" element={<MyPage/>}/>
+//       </Routes>
+//     </BrowserRouter>
+//     </Frame>
+//   )
+// }
 
 export default App;
 
