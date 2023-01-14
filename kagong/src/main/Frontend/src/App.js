@@ -9,50 +9,22 @@ import Cafelist from "./pages/cafelist"
 import MyPage from "./pages/mypage"
 import styled from "styled-components"
 
-function App(){
-  const [ testStr, setTestStr ] = useState('');
-
-  function callback(str) {
-    setTestStr(str);
-  }
-
-  useEffect(
-      () => {
-        axios({
-          url: '/home',
-          method: 'GET'
-        }).then((res) => {
-          callback(res.data);
-        })
-      }, []
-  );
-
-  return (
-      <div className="App">
-        <header className="App-header">
-
-          {testStr}
-        </header>
-      </div>
-  );
+const App = () => {
+  return(
+    <Frame>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<Home/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/start" element={<Start/>}/>
+        <Route path="/cafelist" element={<Cafelist/>}/>
+        <Route path="/mypage" element={<MyPage/>}/>
+      </Routes>
+    </BrowserRouter>
+    </Frame>
+  )
 }
-
-// const App = () => {
-//   return(
-//     <Frame>
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/*" element={<Home/>}/>
-//         <Route path="/signup" element={<Signup/>}/>
-//         <Route path="/login" element={<Login/>}/>
-//         <Route path="/start" element={<Start/>}/>
-//         <Route path="/cafelist" element={<Cafelist/>}/>
-//         <Route path="/mypage" element={<MyPage/>}/>
-//       </Routes>
-//     </BrowserRouter>
-//     </Frame>
-//   )
-// }
 
 export default App;
 

@@ -14,6 +14,6 @@ public class KagongController {
     @GetMapping("/")
     public String boardWriteperson() {return "person";}
 
-    @GetMapping("/home")
-    public String signPage() {return "wow";}
+//    @GetMapping("/home")
+//    public String signPage() {return "../../Frontend/src/pa";}
 }
