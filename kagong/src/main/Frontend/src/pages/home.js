@@ -17,7 +17,7 @@ const Home = () => {
           </div>
         </SearchBox>
         <MapBox>
-          <img src="map임시.png"/>
+          <img src="map.png"/>
         </MapBox>
       </Container>
     </>

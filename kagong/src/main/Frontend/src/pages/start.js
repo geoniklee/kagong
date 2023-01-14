@@ -9,7 +9,7 @@ const Start = () => {
         <div className = 'top'>
           <div className = "top_container">
             <div className = "img_container">
-              <img src="그림5.png"/>
+              <img src="picture5.png"/>
             </div>
             <div className="title_container">
               <h1>환영합니다!</h1>

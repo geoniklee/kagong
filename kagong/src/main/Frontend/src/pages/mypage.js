@@ -39,7 +39,7 @@ const MyPage = () => {
         <MyBox>
            <Link to="/home"><img src="back.png" alt=""/></Link>
             <div className = "img_container">
-              <img src="그림5.png"/>
+              <img src="picture5.png"/>
             </div>
             <div className="title_container">
               <h1>김가영 님</h1>

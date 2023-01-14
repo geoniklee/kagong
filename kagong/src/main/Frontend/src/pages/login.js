@@ -9,7 +9,7 @@ const Login = () => {
         <div className = 'top'>
           <div className = "top_container">
             <div className = "img_container">
-              <img src="그림1.png"/>
+              <img src="picture1.png"/>
             </div>
             <div className="title_container">
               <h1>LOGIN</h1>

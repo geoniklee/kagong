@@ -9,7 +9,7 @@ const Signup = () => {
         <div className = 'top'>
           <div className = "top_container">
             <div className = "img_container">
-              <img src="그림2.png"/>
+              <img src="picture2.png"/>
             </div>
             <div className="title_container">
               <h1>회원가입</h1>
@@ -48,9 +48,9 @@ const Signup = () => {
           <button className="mainBtn" style={{marginBottom: 60}}>Sign up</button>
           <div className="subBtnArea">
             <div className="snsSignup">
-              <button className="kakaoTalk"><img src="카카오톡.png" alt=""></img></button>
-              <button className="naver"><img src="네이버.png" alt=""></img></button>
-              <button className="apple"><img src="애플.png" alt=""></img></button>
+              <button className="kakaoTalk"><img src="kakao.png" alt=""></img></button>
+              <button className="naver"><img src="naver.png" alt=""></img></button>
+              <button className="apple"><img src="apple.png" alt=""></img></button>
               <p className="snsText">SNS로 회원가입하기</p>
             </div>
           </div>
