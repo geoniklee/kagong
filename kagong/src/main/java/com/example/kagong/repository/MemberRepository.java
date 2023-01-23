@@ -14,7 +14,7 @@ public class MemberRepository {
 
     public Long save(Member member) {
         em.persist(member);
-        return member.getMemberid();
+        return member.getMemberId();
     }
 
     public Member findOne(Long id){
@@ -29,6 +29,12 @@ public class MemberRepository {
         return em.createQuery("select m from Member m where m.name = :name")
                 .setParameter("name", name)
                 .getResultList();
+    }
 
+    public void deleteOne(Long memberId){
+        em.createQuery("delete from Member m where m.memberId = :memberId")
+                .setParameter("memberId", memberId)
+                .executeUpdate();
+        em.clear();
     }
 }
