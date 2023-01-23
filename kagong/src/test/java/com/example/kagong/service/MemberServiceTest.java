@@ -1,7 +1,9 @@
 package com.example.kagong.service;
 
+import com.example.kagong.entity.Cafe;
 import com.example.kagong.entity.Member;
 import com.example.kagong.repository.MemberRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,22 +16,36 @@ import static org.junit.jupiter.api.Assertions.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-class MemberServiceTest {
+public class MemberServiceTest {
 
     @Autowired
     MemberRepository memberRepository;
     @Autowired
     MemberService memberService;
 
+
     @Test
-    public void 회원가입() throws Exception{
-        // Given
+    public void testMember() throws Exception {
         Member member = new Member();
-        member.setName("영웅");
+        member.setName("memberA");
+        Long memberId = memberService.save(member);
 
-        // when
-        
+        Member findMember = memberService.findOne(memberId);
+        Assertions.assertThat(findMember.getMemberId()).isEqualTo(member.getMemberId());
+        Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
+        Assertions.assertThat(findMember).isEqualTo(member);
+    }
 
-        // then
+
+    @Test(expected = AssertionError.class)
+    public void testDeleteMember() {
+        Member member = new Member();
+        member.setName("memberA");
+        Long memberId = memberService.save(member);
+
+        memberService.deleteMember(memberId);
+        memberService.findOne(memberId);
+
+        fail("없는 카페입니다.");
     }
 }
