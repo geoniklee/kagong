@@ -22,7 +22,7 @@ public class CafeService {
     public Long saveCafe(Cafe cafe) {return cafeRepository.save(cafe); }
 
     @Transactional
-    public Cafe findCafe(Cafe cafe) {return cafeRepository.findOne(cafe.getCafeId()); }
+    public Cafe findCafe(Long cafeId) {return cafeRepository.findOne(cafeId); }
 
     @Transactional
     public List<Cafe> findAllCafe() {return cafeRepository.findAll();}

@@ -1,5 +1,6 @@
 package com.example.kagong.service;
 
+import com.example.kagong.entity.Cafe;
 import com.example.kagong.entity.Member;
 import com.example.kagong.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
@@ -24,9 +25,22 @@ public class MemberServiceTest {
     @Autowired
     MemberService memberService;
 
+
     @Test
-    public void 회원가입() throws Exception{
-        // Given
+    public void testMember() throws Exception {
+        Member member = new Member();
+        member.setName("memberA");
+        Long memberId = memberService.save(member);
+
+        Member findMember = memberService.findOne(memberId);
+        Assertions.assertThat(findMember.getMemberId()).isEqualTo(member.getMemberId());
+        Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
+        Assertions.assertThat(findMember).isEqualTo(member);
+    }
+
+
+    @Test(expected = AssertionError.class)
+    public void testDeleteMember() {
         Member member = new Member();
         member.setName("kim");
 
@@ -70,5 +84,12 @@ public class MemberServiceTest {
         fail("없는 회원입니다");
 
 
+        member.setName("memberA");
+        Long memberId = memberService.save(member);
+
+        memberService.deleteMember(memberId);
+        memberService.findOne(memberId);
+
+        fail("없는 카페입니다.");
     }
 }
