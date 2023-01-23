@@ -33,4 +33,12 @@ public class CafeRepository {
                 .setParameter("name",name)
                 .getResultList();
     }
+
+    public void delete(Long cafeId) {
+        em.createQuery("delete from Cafe a where a.cafeId = :cafeId")
+                .setParameter("cafeId", cafeId)
+                .executeUpdate();
+        em.clear();
+    }
+
 }
