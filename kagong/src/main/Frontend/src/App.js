@@ -10,20 +10,20 @@ import MyPage from "./pages/mypage"
 import styled from "styled-components"
 
 const App = () => {
-  return(
-    <Frame>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<Home/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/start" element={<Start/>}/>
-        <Route path="/cafelist" element={<Cafelist/>}/>
-        <Route path="/mypage" element={<MyPage/>}/>
-      </Routes>
-    </BrowserRouter>
-    </Frame>
-  )
+    return(
+        <Frame>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/*" element={<Home/>}/>
+                    <Route path="/signup" element={<Signup/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/start" element={<Start/>}/>
+                    <Route path="/cafelist" element={<Cafelist/>}/>
+                    <Route path="/mypage" element={<MyPage/>}/>
+                </Routes>
+            </BrowserRouter>
+        </Frame>
+    )
 }
 
 export default App;
