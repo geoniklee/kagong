@@ -32,4 +32,11 @@ public class UniversityRepository {
                 .setParameter("name", name)
                 .getResultList();
     }
+
+    public void deleteUniversity(Long univId){
+        em.createQuery("delete from University u where u.univId = :univId")
+                .setParameter("univId", univId)
+                .executeUpdate();
+        em.clear();
+    }
 }
