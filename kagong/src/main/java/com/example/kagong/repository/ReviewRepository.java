@@ -25,4 +25,11 @@ public class ReviewRepository {
         return em.createQuery("select r from Review r", Review.class)
                 .getResultList();
     }
+
+    public void deleteReview(Long reviewId){
+        em.createQuery("delete from Review r where r.reviewId = :reviewId")
+                .setParameter("reviewId", reviewId)
+                .executeUpdate();
+        em.clear();
+    }
 }

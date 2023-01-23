@@ -14,7 +14,7 @@ import java.util.List;
 public class Member {
     @Id
     @GeneratedValue
-    private Long memberid;
+    private Long memberId;
 
     private String name;
 
