@@ -17,12 +17,13 @@ public class Cafe {
     private String name;
     @Embedded
     private Address address;
-    private String mood;
-    private int noise;
-    private boolean socket;
-    private boolean chair;
-    private String deskShape;
-    private Date openTime;
+    private String mood;//1.무드
+    private int people;//2.인원수
+    private int noise;//6.소음 크기 0->30~40db 1->40~50db 2->50~60db 3->60~70db
+    private boolean socket;//3.콘센트 여부
+    private boolean chair;//5.의자 등받이여부
+    private String deskShape;//4.책상모양 원형 / 네모
+    private Date openTime;//7.운영시간
     private boolean toilet;
     private boolean studyCafe;
 
