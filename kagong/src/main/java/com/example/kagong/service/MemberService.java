@@ -56,5 +56,32 @@ public class MemberService {
         memberRepository.deleteOne(memberId);
     }
 
+    /*
+     * 닉네임 중복
+     */
+    public boolean checkNickname(String nickName){
+        List<Member> members = memberRepository.findNickName(nickName);
+
+        if(members.isEmpty()){
+            return true;
+        }
+
+        return false;
+    }
+
+    /*
+     * 이메일 중복
+     */
+    public boolean checkEmail(String email){
+        List<Member> members = memberRepository.findEmail(email);
+
+        if(members.isEmpty()){
+            return true;
+        }
+
+        return false;
+    }
+
+
 }
 

@@ -38,4 +38,16 @@ public class MemberRepository {
                 .executeUpdate();
         em.clear();
     }
+
+    public List<Member> findNickName(String nickName){
+        return em.createQuery("select m from Member m where m.nickName = :nickName", Member.class)
+                .setParameter("nickName", nickName).getResultList();
+    }
+
+    public List<Member> findEmail(String email){
+        return em.createQuery("select m from Member m where m.email = :email", Member.class)
+                .setParameter("email", email).getResultList();
+    }
+
+
 }

@@ -18,6 +18,10 @@ public class Member {
 
     private String name;
 
+    private String email;
+    private String password;
+    private String nickName;
+
     @Embedded
     private Address address;
 
@@ -33,5 +37,14 @@ public class Member {
     @Convert(converter = StringListConverter.class)
     private List<String> favoriteList;
 
+    public Member(){
+
+    }
+
+    public Member(String name, String email, String password){
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 }
 
