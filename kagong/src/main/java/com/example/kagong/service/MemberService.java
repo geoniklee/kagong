@@ -3,6 +3,7 @@ package com.example.kagong.service;
 import com.example.kagong.entity.Member;
 import com.example.kagong.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
