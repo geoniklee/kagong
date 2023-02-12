@@ -53,11 +53,11 @@ public class KagongController {
     public ResponseEntity<?> register(@RequestBody Member user){
         Member newMember = new Member(user.getEmail(), user.getName(), user.getPassword());
 
-        if(!memberService.checkEmail(newMember.getEmail())){
-            return ResponseEntity.status()
-        }
-
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body()
+//        if(!memberService.checkEmail(newMember.getEmail())){
+//            return ResponseEntity.status()
+//        }
+//
+//        return ResponseEntity.status(HttpStatus.CREATED)
+//                .body()
     }
 }
