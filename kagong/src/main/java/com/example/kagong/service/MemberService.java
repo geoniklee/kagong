@@ -49,6 +49,11 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
+    public Member loadUserByUsername(String name) {
+        return memberRepository.findByNameOne(name);
+//                .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
+    }
+
     /*
      * 회원 삭제
      */
