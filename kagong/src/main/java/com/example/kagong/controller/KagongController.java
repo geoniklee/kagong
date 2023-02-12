@@ -27,37 +27,37 @@ public class KagongController {
 //        Member entity = memberService.findOne(params.getMemberId());
 //        return entity;
 //    }
-    @GetMapping("/check/nickname/{nickname}")
-    public ResponseEntity<?> checkNickname(@PathVariable("nickname") String nickname) {
-        log.info("Auth Service's Controller Layer :: Call checkNickname Method!");
-
-        if(memberService.checkNickname(nickname)) {
-            return ResponseEntity.status(HttpStatus.OK).body(false);
-        }
-
-        return ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @GetMapping("/check/email/{email}")
-    public ResponseEntity<?> checkEmail(@PathVariable("email") String email) {
-        log.info("Auth Service's Controller Layer :: Call checkNickname Method!");
-
-        if(memberService.checkEmail(email)) {
-            return ResponseEntity.status(HttpStatus.OK).body(false);
-        }
-
-        return ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostMapping("/signup")
-    public ResponseEntity<?> register(@RequestBody Member user){
-        Member newMember = new Member(user.getEmail(), user.getName(), user.getPassword());
-
-//        if(!memberService.checkEmail(newMember.getEmail())){
-//            return ResponseEntity.status()
+//    @GetMapping("/check/nickname/{nickname}")
+//    public ResponseEntity<?> checkNickname(@PathVariable("nickname") String nickname) {
+//        log.info("Auth Service's Controller Layer :: Call checkNickname Method!");
+//
+//        if(memberService.checkNickname(nickname)) {
+//            return ResponseEntity.status(HttpStatus.OK).body(false);
 //        }
 //
-//        return ResponseEntity.status(HttpStatus.CREATED)
-//                .body()
-    }
+//        return ResponseEntity.status(HttpStatus.OK).body(true);
+//    }
+//
+//    @GetMapping("/check/email/{email}")
+//    public ResponseEntity<?> checkEmail(@PathVariable("email") String email) {
+//        log.info("Auth Service's Controller Layer :: Call checkNickname Method!");
+//
+//        if(memberService.checkEmail(email)) {
+//            return ResponseEntity.status(HttpStatus.OK).body(false);
+//        }
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(true);
+//    }
+//
+//    @PostMapping("/signup")
+//    public ResponseEntity<?> register(@RequestBody Member user){
+//        Member newMember = new Member(user.getEmail(), user.getName(), user.getPassword());
+//
+////        if(!memberService.checkEmail(newMember.getEmail())){
+////            return ResponseEntity.status()
+////        }
+////
+////        return ResponseEntity.status(HttpStatus.CREATED)
+////                .body()
+//    }
 }
